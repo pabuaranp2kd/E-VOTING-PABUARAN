@@ -478,7 +478,7 @@ button.sb-pill.off { background: #dc2626; box-shadow: none; cursor: default; }
 
     <footer class="bg-slate-950 border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p>© By. R@yanet 2026 Panitia Pemilihan Kepala Desa Digital Siluman. Hak Cipta Dilindungi.</p>
+            <p>© By. R@yanet 2026 Panitia Pemilihan Kepala Desa Digital Pabuaran. Hak Cipta Dilindungi.</p>
             <button type="button" id="btn-kode" onclick="showKodeModal()" class="hidden underline text-slate-400">Kode perangkat</button>
             <button type="button" id="btn-rekap" onclick="openRekap()" class="hidden underline text-slate-400">Rekapitulasi TPS</button>
             <button type="button" id="btn-audit" onclick="openAudit()" class="hidden underline text-slate-400">Audit Struk</button>
@@ -630,7 +630,7 @@ button.sb-pill.off { background: #dc2626; box-shadow: none; cursor: default; }
         const PH = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240"><rect width="100%" height="100%" fill="#334155"/><text x="50%" y="50%" fill="#94a3b8" font-size="16" text-anchor="middle">Foto</text></svg>');
 
         /* GANTI dengan alamat Web App Apps Script Anda (Deploy > Kelola deployment > URL Aplikasi web, berakhiran /exec) */
-        const API_URL = 'https://script.google.com/macros/s/AKfycbxg-lxi6hQwC3P2h8ZB6oohkpx6cxH1OiRZ9Hf-WyJX08QAlSZVN9Nym283zkmrqOzr/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycby0uuI_OAcjHIzKqOQBv7hVMD3f0J4_oB-MKztLBr92Js2c0FpwKO7YBu4ZveZ81xD8/exec';
         let perluKode = false, memKode = '';
         function getKode() { try { return localStorage.getItem('bilik_kode') || memKode; } catch (e) { return memKode; } }
         function setKode(k) { memKode = k; try { localStorage.setItem('bilik_kode', k); } catch (e) {} }
@@ -730,7 +730,7 @@ button.sb-pill.off { background: #dc2626; box-shadow: none; cursor: default; }
         /* Struk audit 58 mm: hanya pilihan calon, TANPA nama/NIK pemilih (menjaga kerahasiaan) */
         function printVoteSlipBrowser(c, done, kode, tps, voteTime, struk) {
             const test = !c;
-            const desa = struk ? struk.desa : (appSet.Nama_Desa || 'Siluman').toUpperCase();
+            const desa = struk ? struk.desa : (appSet.Nama_Desa || 'Pabuaran').toUpperCase();
             const tpsNo = struk ? struk.tps : (tps || '1');
             
             // Format tanggal dan jam presisi (contoh: 01/11/2026, 04.30.15)
@@ -999,7 +999,7 @@ button.sb-pill.off { background: #dc2626; box-shadow: none; cursor: default; }
             if (!forceMode && !useRawBT()) return printVoteSlipBrowser(c, done, kode, tps, voteTime, struk);
 
             const test = !c;
-            const desa = (appSet.Nama_Desa || 'Siluman').toUpperCase();
+            const desa = (appSet.Nama_Desa || 'Pabuaran').toUpperCase();
             const tpsNo = tps ? String(tps).trim() : '1';
             const vt = voteTime ? new Date(voteTime) : new Date();
             const waktu = vt.toLocaleString('id-ID', {
@@ -1379,7 +1379,7 @@ button.sb-pill.off { background: #dc2626; box-shadow: none; cursor: default; }
         function printRekap() {
             if (!rekapData) return;
             const r = Object.assign({}, rekapData, {
-                desa: (appSet.Nama_Desa || 'Siluman').toUpperCase(), waktuCetak: rekapTime()
+                desa: (appSet.Nama_Desa || 'Pabuaran').toUpperCase(), waktuCetak: rekapTime()
             });
             if (!useRawBT()) return printRekapBrowser(r);
             const modeStruk = String(appSet.Mode_Struk || '').trim().toLowerCase();
