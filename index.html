@@ -101,7 +101,7 @@
     /* Baris Info Pemilih & Tombol Batal (Latar Merah) */
     .sb-top-voter {
         width: 100%;
-        background: #dc2626; 
+        background: #059669; 
         color: #ffffff; 
         padding: 12px 20px; 
         display: flex; 
@@ -115,7 +115,7 @@
     /* Tombol Batal */
     .sb-cancel {
         background: #ffffff !important;
-        color: #dc2626 !important;
+        color: #059669 !important;
         border: none;
         padding: 6px 16px;
         border-radius: 8px;
@@ -630,7 +630,7 @@ button.sb-pill.off { background: #dc2626; box-shadow: none; cursor: default; }
         const PH = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240"><rect width="100%" height="100%" fill="#334155"/><text x="50%" y="50%" fill="#94a3b8" font-size="16" text-anchor="middle">Foto</text></svg>');
 
         /* GANTI dengan alamat Web App Apps Script Anda (Deploy > Kelola deployment > URL Aplikasi web, berakhiran /exec) */
-        const API_URL = 'https://script.google.com/macros/s/AKfycby0uuI_OAcjHIzKqOQBv7hVMD3f0J4_oB-MKztLBr92Js2c0FpwKO7YBu4ZveZ81xD8/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbxg-lxi6hQwC3P2h8ZB6oohkpx6cxH1OiRZ9Hf-WyJX08QAlSZVN9Nym283zkmrqOzr/exec';
         let perluKode = false, memKode = '';
         function getKode() { try { return localStorage.getItem('bilik_kode') || memKode; } catch (e) { return memKode; } }
         function setKode(k) { memKode = k; try { localStorage.setItem('bilik_kode', k); } catch (e) {} }
